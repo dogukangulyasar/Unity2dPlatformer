@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBarController : MonoBehaviour {
     [SerializeField] private Image fillImage;
     private Slider slider;
-    public float currentHealth = 10;
+    static public float currentHealth = 10;
     [SerializeField] private float maxHealth = 10;
 
     // Start is called before the first frame update

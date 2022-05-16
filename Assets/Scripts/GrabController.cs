@@ -16,7 +16,6 @@ public class GrabController : MonoBehaviour {
         if(grabCheck.collider != null && grabCheck.collider.tag == "Baby" ||
            grabCheck.collider != null && grabCheck.collider.tag == "Guns") {
             if(Input.GetKey(KeyCode.Mouse0)) {
-                
                 grabCheck.collider.gameObject.transform.parent = babyHolder;
                 grabCheck.collider.gameObject.transform.position = babyHolder.position;
                 grabCheck.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;

@@ -1,29 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishGame : MonoBehaviour
 {
     private bool isBabyFinish = false;
-    private bool isGunsFinish = false;
+    private bool isCartFinish = false;
     [SerializeField] GameOver gameOverScreen;
 
     void Update() {
-        if(isBabyFinish && isGunsFinish) {
-            Debug.Log("asdasdasdasda");
-            gameOverScreen.Win();
+        if(isBabyFinish && isCartFinish) {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Baby") {
-            Debug.Log("baby");
             isBabyFinish = true;
         }
 
-        if (collision.gameObject.tag == "Guns") {
-            Debug.Log("gn");
-            isGunsFinish = true;
+        if(collision.gameObject.tag == "Cart") {
+            isCartFinish = true;
         }
     }
 }
